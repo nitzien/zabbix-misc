@@ -20,13 +20,13 @@ Mysql credentials are stored in /etc/zabbix/.my.cnf for me. Make sure zabbix use
 
 #### Items
 
-![Mysql Items List](../../readme_images_branch/readme-images/mysql-items.png)
+![Mysql Items List](../../../readme_images_branch/readme-images/mysql-items.png)
 
 
 #### Triggers
 
-![Mysql Triggers List](../../readme_images_branch/readme-images/mysql-trigger.png)
+![Mysql Triggers List](../../../readme_images_branch/readme-images/mysql-trigger.png)
 
 #### Graph
 
-![Mysql Graph](../../readme_images_branch/readme-images/mysql-graph.png)
+![Mysql Graph](../../../readme_images_branch/readme-images/mysql-graph.png)
