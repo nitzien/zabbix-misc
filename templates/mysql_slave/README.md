@@ -8,12 +8,11 @@ Most of available mysql monitoring template uses one user parameter per item. Th
 ``` 
 sudo apt install jq 
 ```
-2. Add following line in zabbix client configuration. 
+2. Add following line in zabbix client configuration. Mysql credentials are stored in /etc/zabbix/.my.cnf for me. Make sure zabbix user has read access to mysql password file
 ```
 UserParameter=Mysql.Slave-Status, mysql --defaults-file=/etc/zabbix/.my.cnf --defaults-group-suffix=_monitoring -e  "show slave status \G" | sed -e "s/^\s*//g" | sed -e "s/:\s*/:/g" |  jq -c  '.  | split("\n")[1:-1]  | map (split(":") | {(.[0]) : .[1]}  ) | add  ' -R -s
 
 ``` 
-Mysql credentials are stored in /etc/zabbix/.my.cnf for me. Make sure zabbix user has read access to mysql password file
 3. Import template into zabbix
 4. Apply "Mysql Slave" template to any mysql slave
 
